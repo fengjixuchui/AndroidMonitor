@@ -1,0 +1,219 @@
+<resources>
+
+    <string name="app_name">Monitor</string>
+
+    <!-- 欢迎页 -->
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="intro_message">
+        <![CDATA[
+            导语
+        ]]>
+    </string>
+    <string name="accept_and_continue">接受并且继续</string>
+
+    <!-- 主界面 -->
+    <string name="title_activity_main">MainActivity</string>
+    <string name="disclaimer">总则\n
+            　　用户在接受AndroidTools服务之前，请务必仔细阅读本条款并同意本声明。\n
+            　　用户直接或通过各类方式使用AndroidTools服务和数据的行为，都将被视作已无条件接受本声明所涉全部内容；若用户对本声明的任何条款有异议，请停止使用AndroidTools所提供的全部服务。\n
+            第一条\n
+            　　用户以各种方式使用AndroidTools服务和数据（包括但不限于发表、宣传介绍、转载、浏览及利用AndroidTools）的过程中，不得以任何方式利用AndroidTools直接或间接从事违反中国法律、以及社会公德的行为，且用户应当恪守下述承诺：\n
+            　　1. 发布、转载或提供的内容符合中国法律、社会公德；\n
+            　　2. 不得干扰、损害和侵犯AndroidTools的各种合法权利与利益；\n
+            　　3. 遵守AndroidTools以及与之相关的网络服务的协议、指导原则、管理细则等；\n
+            　　AndroidTools有权对违反上述承诺的内容予以删除。\n
+            第二条\n
+            　　1. AndroidTools仅为用户发布的内容提供存储空间，AndroidTools不对用户发表、转载的内容提供任何形式的保证：不保证内容满足您的要求，不保证AndroidTools的服务不会中断。因网络状况、通讯线路、第三方网站或管理部门的要求等任何原因而导致您不能正常使用AndroidTools，AndroidTools不承担任何法律责任。\n
+            　　4. 个人或单位如认为AndroidTools上存在侵犯自身合法权益的内容，应准备好具有法律效应的证明材料，及时与AndroidTools取得联系，以便AndroidTools迅速做出处理。\n
+            联系我请 Email: lzqjiujiang@gmail.com</string>
+
+    <!--关于这个应用，这个系统和这个手机的基础信息-->
+    <string name="title_features">特征</string>
+    <string name="grant_permission_to_display_data">授予%s权限，显示%s数据</string>
+    <string name="title_share_to">将%s分享到</string>
+    <string name="not_found">未找到</string>
+
+    <!--硬件相关-->
+    <string name="title_hardware">硬件</string>
+
+    <string name="title_device">设备</string>
+    <string name="manufacturer">硬件厂商</string>
+    <string name="product">手机厂商</string>
+    <string name="brand">系统定制商</string>
+    <string name="model">型号</string>
+    <string name="board">主板</string>
+    <string name="bootloader">系统引导程序版本号</string>
+    <string name="build_device">设备参数</string>
+    <string name="build_display">显示屏参数</string>
+    <string name="fingerprint">硬件名</string>
+    <string name="build_hardware">内核命令行中的硬件名</string>
+    <string name="build_host">主机</string>
+    <string name="build_id">修改版本列表</string>
+    <string name="build_radio">无线电</string>
+    <string name="build_serial">构建序列</string>
+    <string name="supported_abis">支持ABIS</string>
+    <string name="supported_32_bit_abis">支持32位ABIS</string>
+    <string name="supported_64_bit_abis">支持64位ABIS</string>
+    <string name="build_tags">构建标签</string>
+    <string name="build_time">构建时间</string>
+    <string name="build_type">构建类型</string>
+    <string name="build_user">构建用户</string>
+    <string name="device_id">国际移动设备识别码（IMEI）</string>
+    <string name="gsf_id">Google服务框架（GSF ID）</string>
+    <string name="line1_number">手机号</string>
+    <string name="subscriber_id">Subscriber Id</string>
+    <string name="sim_serial_number">Sim Serial Number</string>
+
+    <string name="title_cpu">处理器</string>
+    <string name="build_cpu_abi">CPU和ABI的本地代码指令集</string>
+    <string name="build_cpu_abi2">CPU和ABI的本地代码指令集2</string>
+
+    <string name="title_screen">屏幕</string>
+    <string name="drawable_path">drawable资源目录</string>
+    <string name="screen_orientation">屏幕方向</string>
+    <string name="screen_dpi">每英寸屏幕的精确物理像素数</string>
+    <string name="screen_pixels">屏幕像素</string>
+    <string name="screen_density">屏幕密度（逻辑密度）</string>
+    <string name="screen_density_dpi">屏幕密度（每英寸点数）</string>
+    <string name="screen_scaled_density">显示屏上显示的字体缩放系数</string>
+    <string name="density_default">默认密度</string>
+    <string name="display_size">显示尺寸</string>
+    <string name="display_size_default">默认显示尺寸</string>
+
+    <string name="title_battery">电池</string>
+
+    <string name="title_storage">存储</string>
+
+    <string name="title_network">网络</string>
+    <string name="local_ip_address_v4">本地IPv4地址</string>
+    <string name="local_ip_address_v6">本地IPv6地址</string>
+    <string name="wifi_mac_address">Wi-Fi MAC Address</string>
+    <string name="bluetooth_mac_address">Bluetooth MAC Address</string>
+
+    <string name="title_sensors">传感器</string>
+
+    <string name="title_camera">相机</string>
+
+    <!--软件相关-->
+    <string name="title_software">软件</string>
+
+    <string name="title_os">系统</string>
+    <string name="build_version_sdk_int">SDK版本</string>
+    <string name="build_version_code_name">开发代号</string>
+    <string name="build_version_incremental">底层源代码控件用于表示此构建的内部值</string>
+    <string name="build_version_release">用户可见的版本字符串</string>
+    <string name="build_version_security_patch">用户可见的安全补丁级别</string>
+    <string name="build_version_preview_sdk_int">预发布SDK的开发人员预览版本</string>
+
+    <string name="title_apps">应用</string>
+    <string name="apps_all">所有</string>
+    <string name="apps_system">系统</string>
+    <string name="apps_user">用户</string>
+    <string name="add_tab">增加标签页</string>
+    <string name="input_channel_id">请输入渠道标识，比如小米: mi</string>
+    <string name="apps_total">共有%d个应用</string>
+
+    <string name="title_activity_apk">应用信息</string>
+    <string name="one_key_copy">一键复制</string>
+
+    <string name="action_edit">edit</string>
+
+    <string name="action_share1">share1</string>
+
+    <string name="copy_appinfo_success">应用信息复制成功</string>
+
+    <string name="title_gallery">相册</string>
+
+    <!--工具箱相关-->
+    <string name="title_toolbox">工具箱</string>
+
+    <string name="title_qr_code">Scan a QR code</string>
+
+    <!--联系-->
+    <string name="title_communicate">联系</string>
+
+    <string name="title_share">分享</string>
+
+    <string name="title_about_us">关于Android Tools</string>
+    <string name="copyright">©2018 amlzq</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="list_preference_entries">
+        <item>Entry 1</item>
+        <item>Entry 2</item>
+        <item>Entry 3</item>
+    </string-array>
+
+    <string-array name="list_preference_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="multi_select_list_preference_default_value" />
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+
+</resources>

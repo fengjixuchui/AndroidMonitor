@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_features"
+            android:icon="@drawable/ic_phone_android_black_24dp"
+            android:title="@string/title_features" />
+    </group>
+
+    <item android:title="@string/title_software">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_os"
+                    android:icon="@drawable/ic_android"
+                    android:title="@string/title_os" />
+                <item
+                    android:id="@+id/nav_apps"
+                    android:icon="@drawable/ic_apps_black_24dp"
+                    android:title="@string/title_apps" />
+                <item
+                    android:id="@+id/nav_gallery"
+                    android:icon="@drawable/ic_menu_gallery"
+                    android:title="@string/title_gallery" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/title_hardware">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_device"
+                    android:icon="@drawable/ic_perm_device_information_black_24dp"
+                    android:title="@string/title_device" />
+
+                <item
+                    android:id="@+id/nav_screen"
+                    android:icon="@drawable/ic_fullscreen_black_24dp"
+                    android:title="@string/title_screen" />
+
+                <item
+                    android:id="@+id/nav_cpu"
+                    android:icon="@drawable/ic_developer_board_black_24dp"
+                    android:title="@string/title_cpu" />
+
+                <item
+                    android:id="@+id/nav_storage"
+                    android:icon="@drawable/ic_storage_black_24dp"
+                    android:title="@string/title_storage" />
+
+                <item
+                    android:id="@+id/nav_camera"
+                    android:icon="@drawable/ic_camera_black_24dp"
+                    android:title="@string/title_camera" />
+
+                <item
+                    android:id="@+id/nav_battery"
+                    android:icon="@drawable/ic_battery_unknown_black_24dp"
+                    android:title="@string/title_battery" />
+
+                <item
+                    android:id="@+id/nav_network"
+                    android:icon="@drawable/ic_network_check_black_24dp"
+                    android:title="@string/title_network" />
+
+                <item
+                    android:id="@+id/nav_sensors"
+                    android:icon="@drawable/ic_graphic_eq_black_24dp"
+                    android:title="@string/title_sensors" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/title_toolbox">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_qr_code"
+                    android:icon="@drawable/ic_qr_code_black_24dp"
+                    android:title="@string/title_qr_code" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/title_communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_share"
+                android:title="@string/title_share" />
+            <item
+                android:id="@+id/nav_about_us"
+                android:icon="@drawable/ic_mood_black_24dp"
+                android:title="@string/title_about_us" />
+        </menu>
+    </item>
+
+</menu>

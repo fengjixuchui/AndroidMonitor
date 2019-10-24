@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- main productFlavors. -->
+    <!-- key capital -->
+
+    <!-- 基础色 -->
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimaryLight">#C5CAE9</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccentDark">#ff2770</color>
+    <color name="colorProgress">#4B9500</color>
+    <color name="colorDisable">#999</color>
+    <color name="colorIcons">#FFFFFF</color>
+    <color name="colorDivider">#BDBDBD</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="textColorSecondary">#757575</color>
+
+    <!--状态栏背景色-->
+    <color name="statusBarColor">@color/colorPrimaryDark</color>
+    <!--虚拟按键栏和导航栏的背景色-->
+    <color name="navigationBarColor">#B15709</color>
+
+    <!--背景色-->
+    <color name="windowBackground">#F5F5F5</color>
+    <color name="contentBackground">#EBEBEB</color>
+    <color name="dialogBackground">@android:color/white</color>
+    <color name="appBarBackground">@color/colorPrimary</color>
+    <color name="tabLayoutBackground">@color/colorPrimary</color>
+    <color name="itemBackground">#ffffffff</color>
+    <color name="itemBackgroundDark">@android:color/darker_gray</color>
+
+    <!--按钮波纹-->
+    <color name="buttonBackgroundNormal">@android:color/white</color>
+    <color name="buttonBackgroundPressed">@android:color/darker_gray</color>
+    <color name="buttonBackgroundDisable">@android:color/darker_gray</color>
+
+    <color name="intervalLine">#E1E1E1</color>
+
+    <!--导航条的字体色-->
+    <color name="textColorNavigationBar">#323232</color>
+    <color name="textColorNavigationBarDark">#999999</color>
+
+    <!--  项的背景色 -->
+    <color name="bg_item_normal">#ffffffff</color>
+    <color name="bg_item_pressed">#aaa</color>
+    <color name="bg_item_disable">#aaa</color>
+
+    <!--  栏目的背景色（被项的颜色取代）-->
+    <color name="bg_block">#ffffffff</color>
+    <color name="bg_block_dark">#aaa</color>
+    <!--  块间隔的颜色，与父布局色一致 -->
+    <color name="bg_block_interval">@color/windowBackground</color>
+
+</resources>
