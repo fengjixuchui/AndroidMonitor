@@ -4,7 +4,7 @@ import android.app.SearchManager;
 import android.app.Service;
 import android.content.ComponentName;
 import android.os.Bundle;
-import android.support.v7.widget.SearchView;
+import androidx.appcompat.widget.SearchView;
 import android.view.Menu;
 
 import com.amlzq.android.monitor.MyBaseAppCompatActivity;
