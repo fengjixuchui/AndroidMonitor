@@ -5,14 +5,16 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.amlzq.android.content.ContextHolder;
 import com.amlzq.android.log.Log;
@@ -38,11 +40,13 @@ import pub.devrel.easypermissions.EasyPermissions;
  */
 
 public class FeaturesFragment
-        extends MyBaseRecycleViewFragment<CommonInfo, DeviceAdapter.ViewHolder>
+        extends MyBaseRecycleViewFragment
         implements EasyPermissions.PermissionCallbacks {
 
     public static final String TAG = "FeaturesFragment";
 
+    private SwipeRefreshLayout mSwipeRefresh;
+    private RecyclerView mRecyclerView;
     private DeviceAdapter mAdapter;
 
     public FeaturesFragment() {
@@ -50,8 +54,7 @@ public class FeaturesFragment
     }
 
     public static FeaturesFragment newInstance() {
-        FeaturesFragment fragment = new FeaturesFragment();
-        return fragment;
+        return new FeaturesFragment();
     }
 
     @Override
@@ -59,32 +62,18 @@ public class FeaturesFragment
         super.onCreate(savedInstanceState);
     }
 
-//    @Override
-//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-//                             Bundle savedInstanceState) {
-//        // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_features, container, false);
-//    }
-
     @Override
-    protected int getLayoutResId() {
-        return R.layout.fragment_features;
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_features, container, false);
     }
 
     @Override
-    protected void afterCreate(Bundle savedInstanceState) {
-        super.afterCreate(savedInstanceState);
-        setActivityTitle(R.string.title_features);
-    }
-
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent keyEvent) {
-        return false;
-    }
-
-    @Override
-    public boolean onBackPressed() {
-        return false;
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        mAdapter = new DeviceAdapter();
+        mAdapter.setOnItemClickListener(this);
+        mAdapter.setOnItemChildClickListener(this);
     }
 
     @Override
@@ -97,47 +86,18 @@ public class FeaturesFragment
         }
 
         if (id == R.id.action_share) {
-            new Share2.Builder(mActivity)
+            new Share2.Builder(getActivity())
                     .setContentType(ShareContentType.TEXT)
                     .setTextContent(sb.toString())
-                    .setTitle(String.format(getString(R.string.title_share_to), getActivityTitle()))
+                    .setTitle(String.format(getString(R.string.title_share_to), ""))
                     // .forcedUseSystemChooser(false)
                     .build()
                     .shareBySystem();
         } else if (id == R.id.action_copy) {
-            ClipboardUtil.putText(mContext, sb.toString());
+            ClipboardUtil.putText(getContext(), sb.toString());
             showToastShort(R.string.already_copied_to_the_clipboard);
         }
-
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onTitleChanged(CharSequence charSequence, int i) {
-
-    }
-
-    @Override
-    protected RecyclerView.Adapter<DeviceAdapter.ViewHolder> getAdapter() {
-        mAdapter = new DeviceAdapter();
-        mAdapter.setOnItemClickListener(this);
-        mAdapter.setOnItemChildClickListener(this);
-        return mAdapter;
-    }
-
-    @Override
-    protected RecyclerView.LayoutManager getLayoutManager() {
-        return new LinearLayoutManager(mRecyclerView.getContext());
-    }
-
-    @Override
-    protected RecyclerView.ItemAnimator getItemAnimator() {
-        return new DefaultItemAnimator();
-    }
-
-    @Override
-    protected RecyclerView.ItemDecoration getItemDecoration() {
-        return null;
     }
 
     public boolean isActive() {
@@ -152,10 +112,8 @@ public class FeaturesFragment
         if (StringUtil.notEmpty(message)) showToastShort(message);
     }
 
-    public void refrashListView(List<CommonInfo> datas) {
-        mDatas.clear();
-        mDatas.addAll(datas);
-        mAdapter.setNewData(mDatas);
+    public void refreshListView(List<CommonInfo> items) {
+        mAdapter.setNewData(items);
     }
 
     private void askPhonePermission(CommonInfo model) {
@@ -202,7 +160,7 @@ public class FeaturesFragment
         builder.setMessage(model.content);
         builder.setPositiveButton(R.string.share, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
-                new Share2.Builder(mActivity)
+                new Share2.Builder(getActivity())
                         .setContentType(ShareContentType.TEXT)
                         .setTextContent(model.share())
                         .setTitle(model.id)
@@ -218,7 +176,7 @@ public class FeaturesFragment
         builder.setNeutralButton(R.string.copy, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                ClipboardUtil.putText(mContext, model.share());
+                ClipboardUtil.putText(getContext(), model.share());
                 showToastShort(R.string.already_copied_to_the_clipboard);
             }
         });
@@ -245,7 +203,7 @@ public class FeaturesFragment
                     public void run() {
                         if (!isActive()) return;
                         if (showLoadingUI) setLoadingIndicator(false);
-                        refrashListView(datas);
+                        refreshListView(datas);
                     }
                 });
             }
@@ -261,7 +219,7 @@ public class FeaturesFragment
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         CommonInfo item = mAdapter.getItem(position);
         Log.d(item.toString());
-        showDialog(mContext, item);
+        showDialog(getContext(), item);
     }
 
     @Override
@@ -278,17 +236,8 @@ public class FeaturesFragment
                 askPhonePermission(item);
             }
         } else {
-            showDialog(mContext, item);
+            showDialog(getContext(), item);
         }
     }
 
-    @Override
-    public void onDataEmptyClick() {
-
-    }
-
-    @Override
-    public void onDataThrowableClick() {
-
-    }
 }
